@@ -12,6 +12,7 @@ class Utilities {
     static func createOrbitalPath(forDistance orbit: Float, withObjectRadius radius: CGFloat) -> SCNNode {
         let plane = SCNPlane(width: CGFloat(orbit * 2) + radius, height: CGFloat(orbit * 2) + radius)
         plane.firstMaterial?.diffuse.contents = "orbit"
+        plane.firstMaterial?.isDoubleSided = true
         plane.firstMaterial?.diffuse.mipFilter = .linear
         plane.firstMaterial?.lightingModel = .constant
         let path = SCNNode(geometry: plane)
